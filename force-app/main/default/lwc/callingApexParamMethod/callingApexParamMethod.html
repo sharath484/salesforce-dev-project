@@ -1,0 +1,10 @@
+<template>
+    <lightning-card title="Calling Apex Method with Parameters">
+        <template if:true={myCases}>
+           <template for:each={myCases} for:item="record">
+              <li key ={record.Id} class="slds-m-left_medium"> {record.Id} - {record.Subject} - {record.Priority} - {record.Description}
+                 </li> 
+           </template>
+       </template>
+    </lightning-card>
+</template>

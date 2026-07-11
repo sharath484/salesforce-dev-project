@@ -1,0 +1,7 @@
+<template>
+    <p>{name}</p>
+    <c-sub-container age={myAge}></c-sub-container>
+    <template if:true={hasData}>
+        <p> this is child method called from parent</p>
+    </template>
+</template>

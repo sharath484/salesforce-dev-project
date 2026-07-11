@@ -1,0 +1,21 @@
+<template>
+    <lightning-card title="Handling multiple wire methods">
+       <template if:true={caseRecords}>
+           <template for:each={caseRecords} for:item="record">
+
+            <li key ={record.Id} class="slds-m-left_medium"> <b>{record.Id}</b> - {record.Priority} - {record.Description} 
+                </li>
+             
+           </template>
+       </template>
+       <lightning-card title="Accounts">
+       <template if:true={accountRecords}>
+           <template for:each={accountRecords} for:item="record">
+
+            <li key ={record.Id} class="slds-m-left_medium"> <b>{record.Id}</b> - {record.Name} - {record.Phone} </li>
+           </template>
+       </template>
+       </lightning-card>
+    
+    </lightning-card>
+</template>

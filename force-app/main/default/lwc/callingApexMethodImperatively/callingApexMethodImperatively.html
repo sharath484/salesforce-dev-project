@@ -1,0 +1,28 @@
+<template>
+    <lightning-card title = 'calling apex method imperatively'>
+        <lightning-input type = 'text' label = 'search here' onchange = {handleDesChange} required></lightning-input>
+        <lightning-button label = 'Search' onclick = {handleSearch}></lightning-button>
+
+        <template if:true = {recordsFound}>
+            <table class = 'slds-table slds-table_bordered slds-table_cell-buffer'>
+                <thead>
+                <tr>
+                    <th scope = 'col'>Case Number</th>
+                    <th scope = 'col'>Subject</th>
+                    <th scope = 'col'>Status</th>
+                    <th scope = 'col'>Priority</th>
+                </tr>
+                </thead>
+            <tbody>
+            <template for:each = {myCaseRecords} for:item = 'caseRec'>
+                <tr key={caseRec.id}>
+                    <td>{caseRec.CaseNumber}</td>
+                    <td>{caseRec.Subject}</td>
+                    <td>{caseRec.Status}</td>
+                </tr>
+                </template>
+                </tbody>
+                </table>
+                </template>
+    </lightning-card>
+</template>

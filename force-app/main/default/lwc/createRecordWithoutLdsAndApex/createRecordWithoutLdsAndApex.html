@@ -1,0 +1,20 @@
+<template>
+    <lightning-card title="crating record using createRecord method in js file">
+        <lightning-messages></lightning-messages>
+        <lightning-combobox
+        label="Priority"
+        value={Priority}
+        options={priorityOptions}
+        onchange={handlePriorityChange}>
+    </lightning-combobox>
+        <lightning-input type="text" label="description" value={description} onchange={handleDesChange}></lightning-input>
+        <lightning-combobox
+        label="Status"
+        value={Status}
+        options={options}
+        onchange={handleStatusChange}>
+    </lightning-combobox>
+        <lightning-button type="Submit" class="slds-m-right_medium" label="Create" onclick={createRecord}></lightning-button>
+        <lightning-button type="Reset" label="Reset" onclick={reset}></lightning-button>
+    </lightning-card>
+</template>

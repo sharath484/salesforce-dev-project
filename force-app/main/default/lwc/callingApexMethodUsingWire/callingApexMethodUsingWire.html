@@ -1,0 +1,13 @@
+<template>
+    <lightning-card title="calling apex method using wire service">
+       <template if:true={caseRecords}>
+           <template for:each={caseRecords} for:item="record">
+
+            <li key ={record.Id} class="slds-m-left_medium"> <b>{record.Id}</b> - {record.Priority} - {record.Description} 
+                </li>
+             
+           </template>
+       </template>
+    
+    </lightning-card>
+</template>

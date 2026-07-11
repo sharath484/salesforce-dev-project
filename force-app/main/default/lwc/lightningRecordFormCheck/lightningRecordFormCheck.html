@@ -1,0 +1,55 @@
+<template>
+    <lightning-card title = "lightning record form check">
+        <lightning-record-form 
+             record-id={recordId}
+             object-api-name={objectApiName}
+             fields={fields}
+             mode="edit">
+           </lightning-record-form> <br/>
+
+           <lightning-record-view-form
+           record-id={recordId}
+           object-api-name={objectApiName}>
+           <div class="slds-grid slds-wrap">
+            <div class="slds-col slds-size_1-of-2">
+                     <lightning-output-field field-name="CaseNumber"></lightning-output-field>
+            </div>
+            <div class="slds-col slds-size_1-of-2">
+                     <lightning-output-field field-name="Priority"></lightning-output-field>
+                    </div>
+                    <div class="slds-col slds-size_1-of-2">
+                     <lightning-output-field field-name="Status"></lightning-output-field>
+                    </div>
+                    <div class="slds-col slds-size_1-of-2">
+                     <lightning-output-field field-name="Subject"></lightning-output-field>
+                    </div>
+      
+           </div>
+           </lightning-record-view-form>
+           <lightning-card title="lightning record edit form">
+           <lightning-record-edit-form
+           record-id={recordId}
+           object-api-name={objectApiName}
+           mode="edit">
+            <lightning-messages></lightning-messages>
+            <div class="slds-grid slds-wrap">
+            <div class="slds-col slds-size_1-of-2">
+                     <lightning-input-field field-name="CaseNumber"></lightning-input-field>
+            </div>
+            <div class="slds-col slds-size_1-of-2">
+                     <lightning-input-field field-name="Priority"></lightning-input-field>
+                    </div>
+                    <div class="slds-col slds-size_1-of-2">
+                     <lightning-input-field field-name="Status"></lightning-input-field>
+                    </div>
+                    <div class="slds-col slds-size_1-of-2">
+                     <lightning-input-field field-name="Subject"></lightning-input-field>
+                    </div>
+      
+           </div>
+            <lightning-button type="submit" class="slds-m-right_medium" label="Save" variant="brand"></lightning-button>
+            <lightning-button type="reset" label="Reset" variant="brand"></lightning-button>
+           </lightning-record-edit-form>
+           </lightning-card>
+    </lightning-card>
+</template>

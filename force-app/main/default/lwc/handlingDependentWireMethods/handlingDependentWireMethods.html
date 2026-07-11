@@ -1,0 +1,22 @@
+<template>
+    <lightning-card title="Handling dependent wire methods">
+        {recordId} - {accName}
+        <template if:true={accountData}>
+            <p>Account Name : {accountData.fields.Name.value}</p>
+            <p>Account Phone : {accountData.fields.Phone.value}</p>
+            <p>Account Billing City : {accountData.fields.BillingCity.value}</p>
+            <p>Account Billing State : {accountData.fields.BillingState.value}</p>
+        </template>
+
+            <template if:true={contactsData}>
+                <template for:each={contactsData} for:item="contactData">
+                    <div key ={contactData.Id}>
+                        <p>Contact Name : {contactData.Name}</p>
+                <p>Contact Email : {contactData.Email}</p>
+                <p>Contact Phone : {contactData.Phone}</p>
+                    </div>
+                
+            </template> 
+            </template>
+    </lightning-card>
+</template>

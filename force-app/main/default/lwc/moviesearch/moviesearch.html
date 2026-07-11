@@ -1,0 +1,53 @@
+<template>
+    <!-- filter session-->
+     <div class="filterStyle">
+      <lightning-layout horizontal-align="center">
+        <lightning-layout-item padding = "around-small" size="3">
+          <lightning-combobox
+            name="type"
+            label="type"
+            value={selectedType}
+            placeholder="Select a type"
+            options={getTypeOptions}
+            onchange={handleChange} ></lightning-combobox>
+        </lightning-layout-item>
+        <lightning-layout-item padding = "around-small" size="6">
+          <lightning-input
+            name="search"
+            label="Search"
+            value={selectedSearchTerm}
+            onchange={handleChange}
+            type="search"
+            placeholder="search for a movie/series"
+            is-loading={isLoading}
+        ></lightning-input>
+        </lightning-layout-item>
+        <lightning-layout-item padding = "around-small" size="3">
+          <lightning-input
+            type="number"
+            label="page"
+            name="pageNo"
+            onchange={handleChange}
+            field-level-help="Enter a page  number between 1 and 100"
+            min="1"
+            max="100"
+            step="1"
+            message-when-range-underflow="Enter a valid page number"
+            message-when-range-overflow="Enter a valid page number"
+            value={selectedPage}></lightning-input>
+        </lightning-layout-item>
+      </lightning-layout>
+     </div>
+     <!-- display session-->
+      <template if:true={searchResult}>
+      <div class="slds-scrollable_y displayStyle slds-var-m-top_large sds-box">
+       <lightning-layout horizontal-align="center" multiple-rows="true">
+         <template for:each={searchResult} for:item="searchItem">
+           <lightning-layout-item padding = "around-small" size="3" key={searchItem.imdbID}>
+             <c-movietile search-item={searchItem} onselectedmovie={selectedMovieHandler} selected-movie-id={selectedMovie} ></c-movietile>
+           </lightning-layout-item>
+         </template>
+       </lightning-layout>
+      </div>
+    </template>
+</template>

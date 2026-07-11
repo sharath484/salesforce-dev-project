@@ -1,0 +1,26 @@
+<template>
+    <template lwc:if={loadComponent}>
+        <div class = "slds-var-p-around_small">
+            <div class="slds-grid slds-gutter">
+                <div class="slds-col">
+                    <img src={movieDetails.Poster} alt="Movie Poster" class="slds-var-m-around_small"/>
+                </div>
+                <div class="slds-col">
+                    <h1 class="slds-var-p-around_small">{movieDetails.Title}</h1>
+                    <div class="slds-var-p-around_small">
+                        <p>Released: {movieDetails.Released}</p>
+                        <p>Rated: {movieDetails.Rated}</p>
+                        <p>Runtime: {movieDetails.Runtime}</p>
+                        <p>Genre: {movieDetails.Genre}</p>
+                        <p>Director: {movieDetails.Director}</p>
+                        <p>Writer: {movieDetails.Writer}</p>
+                        <p>Actors: {movieDetails.Actors}</p>
+                        <p>Plot: {movieDetails.Plot}</p>
+                        <p>Language: {movieDetails.Language}</p>
+                        <p>Country: {movieDetails.Country}</p>
+                </div>
+                </div>
+            </div>
+            </div>
+    </template>
+</template>

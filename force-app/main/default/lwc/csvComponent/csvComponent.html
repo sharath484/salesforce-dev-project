@@ -1,0 +1,12 @@
+<template>
+    <div class ="slds-p-around_small styleClass" >
+        <lightning-button label="Export Accounts" onclick={exportCSV} disabled={checkRecords} ></lightning-button>
+    </div>
+   <div style="height: 300px;">
+        <lightning-datatable
+                key-field="id"
+                data={accountData}
+                columns={columns}>
+        </lightning-datatable>
+    </div> 
+</template>

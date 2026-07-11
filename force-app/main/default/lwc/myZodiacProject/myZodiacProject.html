@@ -1,0 +1,13 @@
+<template>
+    <lightning-card title="My Zodiac">
+        <lightning-input class="slds-m-left_small" type="text" label="Enter your name" onchange={handleNameChange}></lightning-input>
+        <lightning-input class="slds-m-left_small" type="date" label="Enter your birthdate" onchange={handleDateChange}></lightning-input>
+        <lightning-button class="slds-m-left_small" label="Submit" onclick={handleSubmit}></lightning-button>
+
+        <div class="slds-m-left_small" if:true={signExists}>
+            <h2>{zodiacSign.zodiacName}</h2>
+            <p>{zodiacSign.about}</p>
+        </div>
+    </lightning-card>
+
+</template>

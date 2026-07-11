@@ -1,0 +1,9 @@
+<template>
+    <lightning-card title ="check reactivity">
+        <template for:each={myPersonalInfo} for:item="myData">
+        <p key={myData.id}>{myData.name} - {myData.address}</p>
+    </template>
+    <lightning-button label="change address" onclick={changeAddress}></lightning-button>
+    <c-reactivity-child-check my-info={myPersonalInfo}></c-reactivity-child-check>
+   </lightning-card>
+</template>
